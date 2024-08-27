@@ -4,7 +4,7 @@ import Card from './components/card';
 import { items } from './constants/items';
 
 function App() {
-  // Inisialisasi state 'cards' dengan nilai awal dari 'items'
+  // Inisialisasi state 'cards'
   const [cards, setCards] = useState(items);
 
   const containerStyle = { 
@@ -45,7 +45,7 @@ function App() {
   // Fungsi untuk menghapus item terakhir
   function handleRemoveItem() {
     if (cards.length > 0) {
-      setCards(cards.slice(0, -1)); // Menghapus item terakhir dari array
+      setCards(cards.slice(0, -1)); 
     }
   }
 
@@ -57,8 +57,8 @@ function App() {
           <Card key={index} title={card.title} subtitle={card.subtitle} style={cardStyle} />
         ))}
       </div>
-      <button onClick={handleAddItem} style={{ marginTop: 10 }}>Tambah Item</button> {/* Tombol tambah item */}
-      <button onClick={handleRemoveItem} style={{ marginTop: 10 }}>Hapus Item</button> {/* Tombol hapus item */}
+      <button onClick={handleAddItem} style={{ marginTop: 10 }}>Tambah Item</button> 
+      <button onClick={handleRemoveItem} style={{ marginTop: 10 }}>Hapus Item</button>
     </div>
   );
 }
